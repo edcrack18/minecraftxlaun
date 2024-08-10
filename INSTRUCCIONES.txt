@@ -1,0 +1,6 @@
+1:
+abre el archivo 1.bat y te llevara a la microsoft store donde instalaras python
+2:
+abre el archivo 2.bat para que te instale las librerias
+3:
+abre el archivo 3.bat para abrir el archivo con Python
