@@ -40,7 +40,7 @@ def ejecutar_minecraft(nombre,vers):
         'uuid' : '',
         'token': '',
 
-        'jvArguments': ["-Xmx{user_ram}G","-Xmx{user_ram}G"], # Puse 2G para la gente de poca ram :v
+        'jvArguments': ["-Xmx{user_ram}G","-Xmx{user_ram}G"], # Realmente no se si funciona esa linea de codigo XD
         'launcherVersion': "0.0.2"
     }
     
