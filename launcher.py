@@ -1,7 +1,7 @@
 import minecraft_launcher_lib, os, subprocess
 
 user_windows = os.environ["USERNAME"]
-minecraft_directorio = f"C:/Users/{user_windows}/AppData/Roaming/.minecraftxlau"
+minecraft_directorio = f"C:/Users/{user_windows}/AppData/Roaming/.minecraft"
 
 def instalar_minecraft(version):
     minecraft_launcher_lib.install.install_minecraft_version(version,minecraft_directorio)
