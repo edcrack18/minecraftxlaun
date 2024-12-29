@@ -1,7 +1,13 @@
 import minecraft_launcher_lib, os, subprocess
 
-user_windows = os.environ["USERNAME"]
-minecraft_directorio = f"C:/Users/{user_windows}/AppData/Roaming/.minecraft"
+user_ram = int(input("Introduce la cantidad de ram que usaras en GB: "))
+
+if os.name == 'nt':
+    user_windows = os.environ["USERNAME"]
+    minecraft_directorio = f"C:/Users/{user_windows}/AppData/Roaming/.minecraft"
+elif os.name == 'posix':
+    user_linux = os.getlogin()
+    minecraft_directorio = f"/home/{user_linux}/Documents/.mine"
 
 def instalar_minecraft(version):
     minecraft_launcher_lib.install.install_minecraft_version(version,minecraft_directorio)
@@ -34,7 +40,7 @@ def ejecutar_minecraft(nombre,vers):
         'uuid' : '',
         'token': '',
 
-        'jvArguments': ["-Xmx2G","-Xmx2G"], # Puse 2G para la gente de poca ram :v
+        'jvArguments': ["-Xmx{user_ram}G","-Xmx{user_ram}G"], # Puse 2G para la gente de poca ram :v
         'launcherVersion': "0.0.2"
     }
     
