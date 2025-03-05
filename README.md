@@ -6,4 +6,4 @@ install "minecraft-launcher-lib" via pip
 
 
 # For windows
-Just use the compiled .exe in Relases
+Just use the compiled .exe in Releases
