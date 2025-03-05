@@ -1,5 +1,27 @@
 import minecraft_launcher_lib, os, subprocess
 
+current_max = 0
+
+def set_status(status: str):
+    print(status)
+
+def set_progress(progress: int):
+    if current_max != 0:
+        print(f"{progress}/{current_max}")
+
+def set_max(new_max: int):
+    global current_max
+    current_max = new_max
+
+callback = {
+    "setStatus": set_status,
+    "setProgress": set_progress,
+    "setMax": set_max
+}
+
+
+#aca empieza mi parte xd
+
 user_ram = int(input("Introduce la cantidad de ram que usaras en GB: "))
 
 if os.name == 'nt':
@@ -10,7 +32,7 @@ elif os.name == 'posix':
     minecraft_directorio = f"/home/{user_linux}/Documents/.mine"
 
 def instalar_minecraft(version):
-    minecraft_launcher_lib.install.install_minecraft_version(version,minecraft_directorio)
+    minecraft_launcher_lib.install.install_minecraft_version(version,minecraft_directorio,callback=callback)
     print(f'se ha instalado la version{version}')
 def versiones_ya_instaladas(version):
     versiones_instaladas = minecraft_launcher_lib.utils.get_installed_versions(minecraft_directorio)
@@ -28,7 +50,7 @@ def instalar_forge(version):
 def ejecutar_minecraft(nombre,vers):
     versiones_instaladas = minecraft_launcher_lib.utils.get_installed_versions(minecraft_directorio)
     if len(versiones_instaladas) == 0:
-        print('No tienes ninguna version instalada, considera instalar una primero')
+        print('No tienes ninguna version instalada, instala una primero, pendejo')
     else:
         for ver in versiones_instaladas:
             print(ver['id'])
@@ -37,8 +59,8 @@ def ejecutar_minecraft(nombre,vers):
 
     options = {
         'username': mine_user,
-        'uuid' : '',
-        'token': '',
+        'uuid' : '00000000-0000-0000-0000-000000000000',
+        'token': 'invalid_token',
 
         'jvArguments': ["-Xmx{user_ram}G","-Xmx{user_ram}G"], # Realmente no se si funciona esa linea de codigo XD
         'launcherVersion': "0.0.2"
