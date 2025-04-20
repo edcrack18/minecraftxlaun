@@ -2,7 +2,7 @@
 un launcher generico de minecraft java
 
 
-choose new version support because ":D" it's broken
+choose new version support because ":D" version is broken
 
 # For linux
 install "minecraft-launcher-lib" via pip
