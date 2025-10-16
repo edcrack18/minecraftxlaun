@@ -62,7 +62,7 @@ def ejecutar_minecraft(nombre,vers):
         'uuid' : '00000000-0000-0000-0000-000000000000',
         'token': 'invalid_token',
 
-        'jvArguments': ["-Xmx{user_ram}G","-Xmx{user_ram}G"], # Realmente no se si funciona esa linea de codigo XD
+        'jvArguments': [f"-Xmx{user_ram}G",f"-Xmx{user_ram}G"], # Realmente no se si funciona esa linea de codigo XD
         'launcherVersion': "0.0.2"
     }
     
@@ -91,3 +91,4 @@ def menu():
                 break
 
 menu()
+
